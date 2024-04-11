@@ -97,7 +97,7 @@ const SingUp = () => {
             </div>
           </div>
         </fieldset>
-        
+        <button className="btn btn-ghost text-lg font-medium text-white bg-violet-600 hover:text-black">Sign Up</button>
       </form>
       <p className="mt-2">Already have an account? Please <Link className="font-medium text-violet-600 underline" to="/signin">Sign In</Link></p>
     </section>
