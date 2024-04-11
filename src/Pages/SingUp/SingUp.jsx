@@ -4,11 +4,11 @@ const SingUp = () => {
   return (
     <section className="max-w-5xl mx-auto mt-10 p-6 dark:bg-gray-200 rounded-lg dark:text-gray-900">
       <form  className=" flex flex-col mx-auto space-y-12">
-        <h1 className="text-center">Sign Up</h1>
+        <h1 className="text-center text-3xl font-bold">Sign Up</h1>
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-300">
           <div className="grid grid-cols-6 gap-4 col-span-full">
             <div className="col-span-full md:col-span-3">
-              <label htmlFor="name" className="text-sm">
+              <label htmlFor="name">
                 Name
               </label>
               <input
@@ -19,7 +19,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full md:col-span-3">
-              <label htmlFor="photoURL" className="text-sm">
+              <label htmlFor="photoURL">
                 PhotoURL
               </label>
               <input
@@ -30,7 +30,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full sm:col-span-3">
-              <label htmlFor="email" className="text-sm">
+              <label htmlFor="email">
                 Email
               </label>
               <input
@@ -41,7 +41,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full sm:col-span-3">
-              <label htmlFor="password" className="text-sm">
+              <label htmlFor="password">
                 Password
               </label>
               <input
@@ -52,7 +52,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full">
-              <label htmlFor="address" className="text-sm">
+              <label htmlFor="address">
                 Address
               </label>
               <input
@@ -63,7 +63,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full sm:col-span-2">
-              <label htmlFor="city" className="text-sm">
+              <label htmlFor="city">
                 City
               </label>
               <input
@@ -74,7 +74,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full sm:col-span-2">
-              <label htmlFor="state" className="text-sm">
+              <label htmlFor="state">
                 State
               </label>
               <input
@@ -85,7 +85,7 @@ const SingUp = () => {
               />
             </div>
             <div className="col-span-full sm:col-span-2">
-              <label htmlFor="zip" className="text-sm">
+              <label htmlFor="zip">
                 ZIP
               </label>
               <input
