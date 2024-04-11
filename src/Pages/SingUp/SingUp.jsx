@@ -14,6 +14,7 @@ const SingUp = () => {
               <input
                 id="name"
                 type="text"
+                required
                 placeholder="Enter your name"
                 className="w-full py-2 px-4 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300"
               />
@@ -36,6 +37,7 @@ const SingUp = () => {
               <input
                 id="email"
                 type="email"
+                required
                 placeholder="Enter your Email"
                 className="w-full py-2 px-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
               />
@@ -47,6 +49,7 @@ const SingUp = () => {
               <input
                 id="password"
                 type="password"
+                required
                 placeholder="Enter your password"
                 className="w-full py-2 px-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
               />
@@ -97,7 +100,7 @@ const SingUp = () => {
             </div>
           </div>
         </fieldset>
-        <button className="btn btn-ghost text-lg font-medium text-white bg-violet-600 hover:text-black">Sign Up</button>
+        <button type="submit" className="btn btn-ghost text-lg font-medium text-white bg-violet-600 hover:text-black">Sign Up</button>
       </form>
       <p className="mt-2">Already have an account? Please <Link className="font-medium text-violet-600 underline" to="/signin">Sign In</Link></p>
     </section>

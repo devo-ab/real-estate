@@ -5,11 +5,13 @@ import Footer from "../Pages/Footer/Footer";
 const Layouts = () => {
   return (
     <div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-2 lg:px-0">
         <Navbar></Navbar>
         <Outlet></Outlet>
       </div>
-      <Footer></Footer>
+      <div className="px-2 lg:px-0">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

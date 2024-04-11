@@ -9,7 +9,7 @@ const Footer = () => {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-              <img src="logo.png" alt="" />
+              <img src="/logo.png" alt="" />
             </div>
             <span className="self-center text-3xl font-bold">Ecomo</span>
           </a>

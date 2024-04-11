@@ -4,11 +4,13 @@ import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import SingIn from "../Pages/SingIn/SingIn";
 import SingUp from "../Pages/SingUp/SingUp";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const routes = createBrowserRouter([
     {
         path:"/",
         element:<Layouts></Layouts>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:"/",
