@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern Apartment with City View",
+      "segment_name": "Residential",
+      "description": "A stunning modern apartment with panoramic city views, located in the heart of the city.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Downtown, New York",
+      "facilities": ["living room", "swimming pool", "kitchen"],
+      "image": "apartment_city_view.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Cozy Family Home with Garden",
+      "segment_name": "Residential",
+      "description": "A charming family home with a spacious garden, perfect for enjoying outdoor activities.",
+      "price": "$350,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Suburb, Los Angeles",
+      "facilities": ["living room", "garden", "kitchen"],
+      "image": "family_home_garden.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Luxurious Penthouse with Skyline View",
+      "segment_name": "Residential",
+      "description": "An extravagant penthouse offering unparalleled luxury and breathtaking skyline views.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Midtown, Chicago",
+      "facilities": ["living room", "swimming pool", "gym", "kitchen"],
+      "image": "luxurious_penthouse.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Sleek Loft with Industrial Design",
+      "segment_name": "Residential",
+      "description": "A stylish loft space featuring industrial design elements and modern amenities.",
+      "price": "$700,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Warehouse District, San Francisco",
+      "facilities": ["living room", "gym", "kitchen"],
+      "image": "sleek_loft_industrial.jpg"
+    }
+  ]
