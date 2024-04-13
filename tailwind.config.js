@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    backgroundImage: {
+      'home-banner': "url('/src/assets/home-banner.jpg')"
+    },
   },
   plugins: [require("daisyui")],
 }
