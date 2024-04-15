@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 
+
 const SingUp = () => {
   const { createUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSingUp = (e) => {
     e.preventDefault();
@@ -32,7 +34,8 @@ const SingUp = () => {
           photoURL: photo,
           phoneNumber: phone,
         });
-        return toast("User create successfully");
+        toast("User create successfully");
+        e.target.reset();
       })
       .catch((error) => {
         console.log(error.message);
@@ -80,16 +83,19 @@ const SingUp = () => {
                     className="w-full py-2 px-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                   />
                 </div>
-                <div className="col-span-full sm:col-span-3">
+                <div className="col-span-full sm:col-span-3 relative">
                   <label htmlFor="password">Password</label>
                   <input
                     id="password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     required
                     placeholder="Enter your password"
                     className="w-full py-2 px-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                   />
+
+                  <span className="absolute top-1/3 right-2"
+                  onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye />}</span>
                 </div>
                 <div className="col-span-full sm:col-span-3">
                   <label htmlFor="userName">User Name</label>

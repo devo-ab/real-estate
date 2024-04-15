@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
 
@@ -31,6 +33,16 @@ const Navbar = () => {
       </NavLink>
     </div>
   );
+
+  const handleSignOut = () =>{
+    logOut()
+    .then((result) => {
+      toast("Sign Out successfully");
+    })
+    .catch((error) => {
+      toast("Something wrong, please try again");
+    })
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -66,7 +78,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-2">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div  role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             {
               user ? <img src={user.photoURL} alt="" /> : <img src="https://i.ibb.co/0J3qGzk/user.png" alt="" />
@@ -75,12 +87,13 @@ const Navbar = () => {
         </div>
 
         {
-          user ? <button onClick={logOut} className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign Out</button> :
+          user ? <button onClick={handleSignOut} className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign Out</button> :
            <Link to="/signin">
           <button className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign In</button>
         </Link>
         }
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -9,7 +9,7 @@
       "area": "2000 sq ft",
       "location": "Downtown, New York",
       "facilities": ["living room", "swimming pool", "kitchen"],
-      "image": "apartment_city_view.jpg"
+      "image": "https://i.ibb.co/GFL0knX/3101.jpg"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "area": "1800 sq ft",
       "location": "Suburb, Los Angeles",
       "facilities": ["living room", "garden", "kitchen"],
-      "image": "family_home_garden.jpg"
+      "image": "https://i.ibb.co/rt26mVP/2150698420.jpg"
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "area": "3000 sq ft",
       "location": "Midtown, Chicago",
       "facilities": ["living room", "swimming pool", "gym", "kitchen"],
-      "image": "luxurious_penthouse.jpg"
+      "image": "https://i.ibb.co/CscWrRw/691.jpg"
     },
     {
       "id": 4,
@@ -45,6 +45,6 @@
       "area": "2200 sq ft",
       "location": "Warehouse District, San Francisco",
       "facilities": ["living room", "gym", "kitchen"],
-      "image": "sleek_loft_industrial.jpg"
+      "image": "https://i.ibb.co/n6FjLXD/2149178352.jpg"
     }
   ]
