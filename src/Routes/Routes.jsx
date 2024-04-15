@@ -5,6 +5,9 @@ import About from "../Pages/About/About";
 import SingIn from "../Pages/SingIn/SingIn";
 import SingUp from "../Pages/SingUp/SingUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
+import HomeDetails from "../Pages/HomeDetails/HomeDetails";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const routes = createBrowserRouter([
     {
@@ -14,7 +17,8 @@ const routes = createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader:() => fetch('/data.json')
             },
             {
                 path:"/about",
@@ -27,6 +31,15 @@ const routes = createBrowserRouter([
             {
                 path:"/signup",
                 element:<SingUp></SingUp>
+            },
+            {
+                path:"/home-details/:id",
+                element:<PrivateRoutes><HomeDetails></HomeDetails></PrivateRoutes>,
+                loader:() => fetch('/data.json')
+            },
+            {
+                path:"/update-profile",
+                element:<PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
             }
         ],
     },

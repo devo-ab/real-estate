@@ -31,6 +31,19 @@ const Navbar = () => {
       >
         About
       </NavLink>
+
+      {
+        user && <NavLink
+        to="/update-profile"
+        className={({ isActive }) =>
+          isActive
+            ? "text-[#706F6F] text-lg font-medium border border-[#706F6F] rounded-md px-3 py-1 text-center"
+            : "text-[#131313CC] text-center text-lg"
+        }
+      >
+        Update Profile
+      </NavLink>
+      }
     </div>
   );
 
@@ -71,7 +84,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-3xl text-[#131313] font-bold">Ecomo</a>
+        <Link to="/" className="btn btn-ghost text-3xl text-[#131313] font-bold">Ecomo</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
