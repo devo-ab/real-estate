@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const SingUp = () => {
@@ -94,7 +95,7 @@ const SingUp = () => {
                     className="w-full py-2 px-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                   />
 
-                  <span className="absolute top-1/3 right-2"
+                  <span className="absolute top-1/2 right-2"
                   onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye />}</span>
                 </div>
                 <div className="col-span-full sm:col-span-3">
