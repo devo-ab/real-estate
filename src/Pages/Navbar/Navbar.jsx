@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+
+  const {user, logOut} = useContext(AuthContext)
+
   const navLinks = (
     <div className="lg:space-x-5 space-y-2 md:space-y-0 flex flex-col lg:flex-row items-center">
       <NavLink
@@ -63,15 +68,14 @@ const Navbar = () => {
       <div className="navbar-end gap-2">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
+            {
+              user ? <img src={user.photoURL} alt="" /> : <img src="https://i.ibb.co/0J3qGzk/user.png" alt="" />
+            }
           </div>
         </div>
 
         {
-        //   user ? <button className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign Out</button> :
+          user ? <button onClick={logOut} className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign Out</button> :
            <Link to="/signin">
           <button className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign In</button>
         </Link>
