@@ -27,7 +27,7 @@ const Home = () => {
       </div>
       <div className="mt-10">
         <h1 className="text-3xl lg:text-5xl font-bold text-center animate__animated animate__shakeX">
-          On Going Sale
+          Estates
         </h1>
         <div className="mt-10 grid grid-cols-2 gap-5">
           {homeData.map((data) => (

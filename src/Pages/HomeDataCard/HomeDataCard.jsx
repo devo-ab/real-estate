@@ -18,7 +18,7 @@ const HomeDataCard = ({ data }) => {
         <p className="font-bold mt-1">Status : {status}</p>
         <p className="flex items-center gap-2 mt-1"><CiLocationOn />{location}</p>
       <Link to={`/home-details/${id}`} className="btn btn-ghost mt-1 text-white font-semibold bg-violet-600">
-        <button>View Details</button>
+        <button>View Property</button>
       </Link>
       </div>
     </div>
