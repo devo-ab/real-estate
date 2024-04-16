@@ -2,11 +2,15 @@ import "animate.css";
 import { useLoaderData } from "react-router-dom";
 import HomeDataCard from "../HomeDataCard/HomeDataCard";
 import "animate.css";
+import { useEffect } from "react";
 
 const Home = () => {
+  
   const homeData = useLoaderData();
   console.log(homeData);
-
+  useEffect(() => {
+    document.title = 'Ecomo | Home';
+  } ,[]);
   return (
     <div>
       <div className="bg-home-banner bg-center mt-10 rounded-lg py-10 lg:py-48 lg:px-40">

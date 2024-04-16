@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,6 +16,9 @@ const UpdateProfile = () => {
     
   };
 
+  useEffect(() => {
+    document.title = 'Ecomo | Update Profile';
+  } ,[]);
   return (
     <div className="mt-10">
       <form onSubmit={handleUpdateProfile} className=" flex flex-col mx-auto space-y-12">

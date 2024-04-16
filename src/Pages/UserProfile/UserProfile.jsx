@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
 
+  useEffect(() => {
+    document.title = 'Ecomo | User Profile';
+  } ,[]);
   return (
     <div className="md:w-1/2 mx-auto mt-10">
       <div className="flex items-center gap-4">

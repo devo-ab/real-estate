@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { useEffect } from "react";
 
 const ErrorPage = () => {
+  useEffect(() => {
+    document.title = 'Ecomo | Error';
+  } ,[]);
   return (
     <div>
       <div className="max-w-7xl mx-auto px-2 lg:px-0">

@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { AiOutlineAreaChart } from "react-icons/ai";
+import { useEffect } from "react";
 
 const HomeDetails = () => {
   const homeData = useLoaderData();
@@ -20,6 +21,9 @@ const HomeDetails = () => {
     image,
   } = home;
 
+  useEffect(() => {
+    document.title = 'Ecomo | Details';
+  } ,[]);
   return (
     <div className="mt-10 max-w-3xl mx-auto rounded-md border border-violet-600 p-5">
       <div>

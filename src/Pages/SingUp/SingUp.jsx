@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -45,6 +45,9 @@ const SingUp = () => {
     // update profile data
   };
 
+  useEffect(() => {
+    document.title = 'Ecomo | Sign Up';
+  } ,[]);
   return (
     <div>
       <div>

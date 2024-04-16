@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const About = () => {
+	useEffect(() => {
+		document.title = 'Ecomo | About';
+	} ,[]);
     return (
         <article className="max-w-2xl px-6 py-24 mx-auto space-y-12  dark:text-gray-900">
 	<div className="w-full mx-auto space-y-4 text-center">

@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const SingIn = () => {
 
   const { signIn, singInWithGoogle, singInWithGithub, singInWithTwitter } = useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -18,6 +21,7 @@ const SingIn = () => {
     signIn(email, password)
     .then((result) => {
       toast("Sign In Successfully");
+      navigate(location?.state? location.state : '/');
       e.target.reset();
     })
     .catch((error) => {
@@ -29,6 +33,7 @@ const SingIn = () => {
     singInWithGoogle()
     .then((result) => {
       toast("Google sign in successfully");
+      navigate(location?.state? location.state : '/');
     })
     .catch((error) => {
       toast("Something wrong, please try again");
@@ -39,6 +44,7 @@ const SingIn = () => {
     singInWithGithub()
     .then((result) => {
       toast("Github sign in successfully");
+      navigate(location?.state? location.state : '/');
     })
     .catch((error) => {
       toast("Something wrong, please try again");
@@ -49,12 +55,16 @@ const SingIn = () => {
     singInWithTwitter()
     .then((result) => {
       toast("Twitter sign in successfully");
+      navigate(location?.state? location.state : '/');
     })
     .catch((error) => {
       toast("Something wrong, please try again");
     })
   };
 
+  useEffect(() => {
+    document.title = 'Ecomo | Sign In';
+  } ,[]);
   return (
     <div className="w-full mt-10 mx-auto max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-300 dark:text-gray-800">
       <h1 className="text-2xl font-bold text-center">Sign In</h1>
