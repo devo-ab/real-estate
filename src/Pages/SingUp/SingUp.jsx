@@ -39,7 +39,7 @@ const SingUp = () => {
         e.target.reset();
       })
       .catch((error) => {
-        console.log(error.message);
+        toast("Something wrong try again letter");
       });
 
     // update profile data

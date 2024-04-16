@@ -4,6 +4,9 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
 const Navbar = () => {
 
   const {user, logOut} = useContext(AuthContext)
@@ -94,7 +97,7 @@ const Navbar = () => {
         <div  role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             {
-              user ? <img src={user.photoURL} alt="" /> : <img src="https://i.ibb.co/0J3qGzk/user.png" alt="" />
+              user && <div data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}><img  src={user.photoURL} alt="" /></div>
             }
           </div>
         </div>
@@ -106,6 +109,7 @@ const Navbar = () => {
         </Link>
         }
       </div>
+      <Tooltip id="my-tooltip" />
       <ToastContainer />
     </div>
   );

@@ -1,6 +1,7 @@
 import "animate.css";
 import { useLoaderData } from "react-router-dom";
 import HomeDataCard from "../HomeDataCard/HomeDataCard";
+import "animate.css";
 
 const Home = () => {
   const homeData = useLoaderData();
@@ -24,10 +25,15 @@ const Home = () => {
           apartments and rooms, in various locations to suit your lifestyle and budget.
         </p>
       </div>
-      <div>
-        {
-            homeData.map(data => <HomeDataCard key={data.id} data={data}></HomeDataCard>)
-        }
+      <div className="mt-10">
+        <h1 className="text-3xl lg:text-5xl font-bold text-center animate__animated animate__shakeX">
+          On Going Sale
+        </h1>
+        <div className="mt-10 grid grid-cols-2 gap-5">
+          {homeData.map((data) => (
+            <HomeDataCard key={data.id} data={data}></HomeDataCard>
+          ))}
+        </div>
       </div>
     </div>
   );

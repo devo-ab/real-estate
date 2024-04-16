@@ -46,5 +46,29 @@
       "location": "Warehouse District, San Francisco",
       "facilities": ["living room", "gym", "kitchen"],
       "image": "https://i.ibb.co/n6FjLXD/2149178352.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Waterfront Villa with Private Dock",
+      "segment_name": "Residential",
+      "description": "An elegant waterfront villa with a private dock, offering serene views and luxurious living.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "4000 sq ft",
+      "location": "Marina District, Miami",
+      "facilities": ["living room", "swimming pool", "private dock", "kitchen"],
+      "image": "https://i.ibb.co/VWH6HR0/66544.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Country Estate with Horse Stables",
+      "segment_name": "Residential",
+      "description": "A picturesque country estate featuring sprawling grounds and horse stables for equestrian enthusiasts.",
+      "price": "$1,800,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Rural Countryside, Texas",
+      "facilities": ["living room", "swimming pool", "horse stables", "kitchen"],
+      "image": "https://i.ibb.co/cwhS18B/bedford-horse-farm-cusato-management-corp-img-8651534f012e8421-4-3172-1-f294f6b.jpg"
     }
   ]
