@@ -80,9 +80,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="mt-10 max-h-96">
+      <div className="mt-10">
         <LocationMap></LocationMap>
-      </div> */}
+      </div>
     </div>
   );
 };
