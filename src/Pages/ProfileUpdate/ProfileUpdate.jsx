@@ -28,7 +28,7 @@ const ProfileUpdate = () => {
         toast("Something wrong try again letter");
       });
     
-    updateEmail(auth.currentUser, email)
+    updateEmail(auth.currentUser, (email))
     .then(() => {
         console.log("email updated")
     })

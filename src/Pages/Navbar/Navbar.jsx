@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import 'react-tooltip/dist/react-tooltip.css'
-import { Tooltip } from 'react-tooltip'
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
-
-  const {user, logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
   const navLinks = (
     <div className="lg:space-x-5 space-y-2 md:space-y-0 flex flex-col lg:flex-row items-center">
@@ -35,8 +34,7 @@ const Navbar = () => {
         About
       </NavLink>
 
-      {
-        user && <NavLink
+      <NavLink
         to="/user-profile"
         className={({ isActive }) =>
           isActive
@@ -46,43 +44,42 @@ const Navbar = () => {
       >
         User Profile
       </NavLink>
-      }
-      {
-        user && <NavLink
-        to="/update-profile"
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#706F6F] text-lg font-medium border border-[#706F6F] rounded-md px-3 py-1 text-center"
-            : "text-[#131313CC] text-center text-lg"
-        }
-      >
-        Update Profile
-      </NavLink>
-      }
+      {user && (
+        <NavLink
+          to="/update-profile"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#706F6F] text-lg font-medium border border-[#706F6F] rounded-md px-3 py-1 text-center"
+              : "text-[#131313CC] text-center text-lg"
+          }
+        >
+          Update Profile
+        </NavLink>
+      )}
 
-      {
-        user && <NavLink
-        to="/feedback"
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#706F6F] text-lg font-medium border border-[#706F6F] rounded-md px-3 py-1 text-center"
-            : "text-[#131313CC] text-center text-lg"
-        }
-      >
-        Feedback
-      </NavLink>
-      }
+      {user && (
+        <NavLink
+          to="/feedback"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#706F6F] text-lg font-medium border border-[#706F6F] rounded-md px-3 py-1 text-center"
+              : "text-[#131313CC] text-center text-lg"
+          }
+        >
+          Feedback
+        </NavLink>
+      )}
     </div>
   );
 
-  const handleSignOut = () =>{
+  const handleSignOut = () => {
     logOut()
-    .then((result) => {
-      toast("Sign Out successfully");
-    })
-    .catch((error) => {
-      toast("Something wrong, please try again");
-    })
+      .then((result) => {
+        toast("Sign Out successfully");
+      })
+      .catch((error) => {
+        toast("Something wrong, please try again");
+      });
   };
 
   return (
@@ -112,27 +109,39 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-3xl text-[#131313] font-bold">Ecomo</Link>
+        <Link to="/" className="btn btn-ghost text-3xl text-[#131313] font-bold">
+          Ecomo
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
 
       <div className="navbar-end gap-2">
-        <div  role="button" className="btn btn-ghost btn-circle avatar">
+        <div role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            {
-              user && <div data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}><img  src={user.photoURL} alt="" /></div>
-            }
+            {user && (
+              <div data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+                <img src={user.photoURL} alt="" />
+              </div>
+            )}
           </div>
         </div>
 
-        {
-          user ? <button onClick={handleSignOut} className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign Out</button> :
-           <Link to="/signin">
-          <button className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">Sign In</button>
-        </Link>
-        }
+        {user ? (
+          <button
+            onClick={handleSignOut}
+            className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn"
+          >
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/signin">
+            <button className="bg-violet-600 px-8 text-white hover:text-black text-xl font-semibold btn">
+              Sign In
+            </button>
+          </Link>
+        )}
       </div>
       <Tooltip id="my-tooltip" />
       <ToastContainer />
