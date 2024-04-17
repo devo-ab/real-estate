@@ -3,14 +3,18 @@ import { useLoaderData } from "react-router-dom";
 import HomeDataCard from "../HomeDataCard/HomeDataCard";
 import "animate.css";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import LocationMap from "./LocationMap";
+import Slider from "./Slider";
 
 const Home = () => {
-  
   const homeData = useLoaderData();
   console.log(homeData);
   useEffect(() => {
-    document.title = 'Ecomo | Home';
-  } ,[]);
+    document.title = "Ecomo | Home";
+    AOS.init({ disable: 'mobile'});
+  }, []);
   return (
     <div>
       <div className="bg-home-banner bg-center mt-10 rounded-lg py-10 lg:py-48 lg:px-40">
@@ -29,16 +33,56 @@ const Home = () => {
           apartments and rooms, in various locations to suit your lifestyle and budget.
         </p>
       </div>
+
       <div className="mt-10">
         <h1 className="text-3xl lg:text-5xl font-bold text-center animate__animated animate__shakeX">
           Estates
         </h1>
-        <div className="mt-10 grid grid-cols-2 gap-5">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
           {homeData.map((data) => (
             <HomeDataCard key={data.id} data={data}></HomeDataCard>
           ))}
         </div>
       </div>
+
+      <div className="mt-10">
+        <h1 className="text-4xl font-bold text-center mb-5">On Going Sale Offer</h1>
+        <Slider></Slider>
+      </div>
+
+      <div className="mt-10">
+        <h1 className="text-4xl font-bold text-center">Features Homes</h1>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div data-aos="slide-right" className="border border-violet-600 w-fit p-1">
+            <img src="/home-1.jpg" alt="" />
+          </div>
+          <div data-aos="fade-down" className="border border-violet-600 w-fit p-1">
+            <img src="/home-2.jpg" alt="" />
+          </div>
+          <div data-aos="fade-down" className="border border-violet-600 w-fit p-1">
+            <img src="/home-3.jpg" alt="" />
+          </div>
+          <div data-aos="slide-left" className="border border-violet-600 w-fit p-1">
+            <img src="/home-4.jpg" alt="" />
+          </div>
+          <div data-aos="slide-right" className="border border-violet-600 w-fit p-1">
+            <img src="/home-5.jpg" alt="" />
+          </div>
+          <div data-aos="fade-up" className="border border-violet-600 w-fit p-1">
+            <img src="/home-6.jpg" alt="" />
+          </div>
+          <div data-aos="fade-up" className="border border-violet-600 w-fit p-1">
+            <img src="/home-7.jpg" alt="" />
+          </div>
+          <div data-aos="slide-left" className="border border-violet-600 w-fit p-1">
+            <img src="/home-8.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="mt-10 max-h-96">
+        <LocationMap></LocationMap>
+      </div> */}
     </div>
   );
 };

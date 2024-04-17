@@ -2,8 +2,14 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { getAuth, updateEmail, updateProfile } from "firebase/auth";
+import app from "../../Firebase/firebase.config";
 
-const UpdateProfile = () => {
+
+
+const auth = getAuth(app);
+
+const ProfileUpdate = () => {
   const { user} = useContext(AuthContext);
 
   const handleUpdateProfile = (e) => {
@@ -12,8 +18,20 @@ const UpdateProfile = () => {
     const email = e.target.email.value;
     const photo = e.target.photoURL.value;
 
+    updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photo,
+      })
+      .then(() => {
+        toast("Profile update successfully");
+      })
+      .catch(() => {
+        toast("Something wrong try again letter");
+      });
     
-    
+    updateEmail(auth.currentUser, email)
+    .then(() => {
+        console.log("email updated")
+    })
   };
 
   useEffect(() => {
@@ -66,4 +84,4 @@ const UpdateProfile = () => {
   );
 };
 
-export default UpdateProfile;
+export default ProfileUpdate;

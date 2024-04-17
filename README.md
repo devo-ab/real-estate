@@ -10,6 +10,6 @@ This site live link [Ecomo]().
 * An intuitive navigation menu helps visitors easily find what they're looking for. 
 
 ### npm package
-* Swiper Slider - npm install swiper
+* AOS - npm install aos --save
 * Animate.css - npm install animate.css --save
 * React Leaflet - npm install react react-dom leaflet

@@ -7,8 +7,9 @@ import SingUp from "../Pages/SingUp/SingUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
 import HomeDetails from "../Pages/HomeDetails/HomeDetails";
-import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import ProfileUpdate from "../Pages/ProfileUpdate/ProfileUpdate";
+
 
 const routes = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:"/update-profile",
-                element:<PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
+                element:<PrivateRoutes><ProfileUpdate></ProfileUpdate></PrivateRoutes>
             },
             {
                 path:"/user-profile",
