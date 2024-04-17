@@ -81,6 +81,7 @@ const Home = () => {
       </div>
 
       <div className="mt-10">
+        <h1 className="text-4xl font-bold text-center mb-5">Office Location</h1>
         <LocationMap></LocationMap>
       </div>
     </div>
